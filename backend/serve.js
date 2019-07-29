@@ -14,6 +14,12 @@ var port = normalizePort(process.env.PORT || '3001');
 var app = express();
 // app.use(methodOverride('_method'));
 app.use(logger('dev')); // ロガー
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 var api = require("./routes/api"); // ルーティング設定
 app.use('/_api/', api);
 
