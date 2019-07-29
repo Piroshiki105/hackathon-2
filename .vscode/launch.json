@@ -5,11 +5,26 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Launch Chrome",
+            "url": "http://localhost:3000",
+            "webRoot": "${workspaceFolder}"
+        },
+        {
+            "type": "chrome",
+            "request": "attach",
+            "name": "Attach to Chrome",
+            "port": 9222,
+            "webRoot": "${workspaceFolder}"
+        },        
+        {
             "type": "node",
             "request": "launch",
-            "name": "Launch Program",
-            "program": "${workspaceFolder}\\bin\\www",
+            "name": "frontend",
+            "program": "npm start",
+            "cwd": "${workspaceFolder}\\frontend",
             "outputCapture": "std"
-        }
+        },
     ]
 }
