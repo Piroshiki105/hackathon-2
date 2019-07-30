@@ -1,4 +1,4 @@
 'use strict';
 
-var employee_controller = require('./employee_controller');
-exports.employee_controller = employee_controller
+var apply_controller = require('./apply_controller');
+exports.apply_controller = apply_controller
