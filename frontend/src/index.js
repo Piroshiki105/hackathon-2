@@ -4,10 +4,9 @@ var rrd = require('react-router-dom');
 var BrowserRouter = rrd.BrowserRouter;
 var Route = rrd.Route;
 var Link = rrd.Link;
-var EmployeeList = require('./EmployeeList');
-var EmployeeDetail = require('./EmployeeDetail');
-// var EmployeeNew = require('./EmployeeNew');
-// var EmployeeEdit = require('./EmployeeEdit');
+var ApplyList = require('./ApplyList');
+var ApplyDetail = require('./ApplyDetail');
+var ApplyNew = require('./ApplyNew');
 
 class ExpressSampleApp extends React.Component {
   render() {
@@ -16,14 +15,13 @@ class ExpressSampleApp extends React.Component {
         <div>
           <ul>
             <li><Link to="/">Home</Link></li>
-            <li><Link to="/employees">employee</Link></li>
+            <li><Link to="/apply">apply</Link></li>
           </ul>
           <Route exact path="/" component={Home} />
-          <Route exact path="/employees" component={EmployeeList} />
-          <Route exact path='/employees/:id([0-9]+)' component={EmployeeDetail} />
-          {/* <Route exact path="/employees/new" component={EmployeeNew} /> */}
-          {/* <Route exact path="/employees/:id([0-9]+)/edit" component={EmployeeEdit} /> */}
-          <Link to="/employees/new">New</Link>
+          <Route exact path="/apply" component={ApplyList} />
+          <Route exact path='/apply/:id([0-9]+)' component={ApplyDetail} />
+          <Route exact path="/apply/new" component={ApplyNew} />
+          <Link to="/apply/new">New</Link>
         </div>
       </BrowserRouter>
     );

@@ -1,22 +1,22 @@
 var React = require('react');
 
-class EmployeeDetail extends React.Component {
+class ApplyDetail extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       id: this.props.match.params.id,
-      employee: {},
+      apply: {},
     };
 
-    this.loadEmployee = this.loadEmployee.bind(this);
+    this.loadApply = this.loadApply.bind(this);
   }
 
-  loadEmployee() {
-    return fetch(`http://localhost:3001/_api/employees/${this.state.id}`)
+  loadApply() {
+    return fetch(`http://localhost:3001/_api/Apply/${this.state.id}`)
       .then((response) => response.json())
       .then((responseJson) =>
         this.setState({
-          employee: responseJson.employee,
+          apply: responseJson.apply,
         })
       )
       .catch((error) => {
@@ -25,14 +25,14 @@ class EmployeeDetail extends React.Component {
   }
 
   componentWillMount() {
-    this.loadEmployee();
+    this.loadApply();
   }
 
   render() {
-    const attributes_array = ["name", "gender", "birth"].map((attr) =>
+    const attributes_array = ["user_name", "value"].map((attr) =>
       { return {
         name: attr,
-        val: this.state.employee[attr] ? this.state.employee[attr].toString() : '...loading'
+        val: this.state.apply[attr] ? this.state.apply[attr].toString() : '...loading'
       } }
     );
     return (
@@ -48,4 +48,4 @@ class EmployeeDetail extends React.Component {
   }
 }
 
-module.exports = EmployeeDetail;
+module.exports = ApplyDetail;

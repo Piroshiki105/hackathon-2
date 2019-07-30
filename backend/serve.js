@@ -4,7 +4,7 @@ var debug = require('debug')('hackathon-2:server');
 var http = require('http');
 var express = require('express');
 var logger = require('morgan');
-var path = require('path');
+var bodyParser = require('body-parser')
 
 /**
  * Get port from environment and store in Express.
@@ -12,7 +12,8 @@ var path = require('path');
 var port = normalizePort(process.env.PORT || '3001');
 
 var app = express();
-// app.use(methodOverride('_method'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(logger('dev')); // ロガー
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
