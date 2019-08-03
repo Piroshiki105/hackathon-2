@@ -57,15 +57,3 @@ class Chat extends React.Component {
 module.exports = Chat;
 
 
-
-// <table>
-// <thead>
-//   <tr>
-//     <th>Name</th>
-//     <th>VALUE</th>
-//   </tr>
-// </thead>
-// <tbody>
-//   {body}
-// </tbody>
-// </table>

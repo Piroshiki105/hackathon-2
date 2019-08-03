@@ -37,7 +37,7 @@ class ImageList extends React.Component {
     const body = this.state.image_list.map((image) =>
       <tr key={`imageList-${image.id}`}>
         <td>{image.name}</td>
-        <td><Link to={`{image.url} `}><img src={image.url} /></Link></td>
+        <td><img src={image.url} /></td>
       </tr>
     );
 
@@ -53,17 +53,3 @@ class ImageList extends React.Component {
 }
 
 module.exports = ImageList;
-
-
-
-// <table>
-// <thead>
-//   <tr>
-//     <th>Name</th>
-//     <th>VALUE</th>
-//   </tr>
-// </thead>
-// <tbody>
-//   {body}
-// </tbody>
-// </table>

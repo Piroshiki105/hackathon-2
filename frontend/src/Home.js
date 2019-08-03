@@ -42,8 +42,10 @@ class Home extends React.Component {
 
     return (
       <table width="100%">
-        <tr align="center">
-          <div> <img src="/IMG/dummy.jpg" alt="タイトル画像" /></div>
+        <tr align="center" >
+          <br/>
+          <div><font face="HGP創英角ﾎﾟｯﾌﾟ体" size="6"><font color="#ff4d00">エ</font><font color="#f98100">ビ</font><font color="#f4b400">ス</font><font color="#eee300">マ</font><font color="#c1e900">ー</font><font color="#8ae300">ト</font><font color="#57de00">公</font><font color="#25d800">式</font><font color="#00d30a">サ</font><font color="#00cd36">イ</font><font color="#00c860">ト</font><font color="#00c288">！</font></font></div>
+          <br/>
         </tr>
         <td>
           <marquee bgcolor="#ff66c2" behavior="alternate"><font color="#00ff19" face="HGP創英角ﾎﾟｯﾌﾟ体">ようこそエビスマート公式ホームページへ</font></marquee>
@@ -53,7 +55,8 @@ class Home extends React.Component {
             人目のお客様です。
         </td>
         </tr>
-        <tbody>
+        <tbody align="center">
+          <br/>
           更新履歴
           {body}
         </tbody>
@@ -63,17 +66,3 @@ class Home extends React.Component {
 }
 
 module.exports = Home;
-
-
-
-// <table>
-// <thead>
-//   <tr>
-//     <th>Name</th>
-//     <th>VALUE</th>
-//   </tr>
-// </thead>
-// <tbody>
-//   {body}
-// </tbody>
-// </table>
