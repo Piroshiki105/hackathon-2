@@ -11,16 +11,13 @@ var ImageList = require('./ImageList');
 var BBS = require('./BBS');
 var Chat = require('./Chat');
 var LinkList = require('./LinkList');
+var Home = require('./Home');
 
 class ExpressSampleApp extends React.Component {
   render() {
     return (
       <BrowserRouter>
-        <div>
-          <ul>
-            {/* <li><Link to="/">Home</Link></li>
-            <li><Link to="/apply">apply</Link></li> */}
-          </ul>
+        <div> 
           <Route exact path="/" component={Home} />
           <Route exact path="/apply" component={ApplyList} />
           <Route exact path='/apply/:id([0-9]+)' component={ApplyDetail} />
@@ -34,17 +31,6 @@ class ExpressSampleApp extends React.Component {
     );
   }
 }
-
-class Home extends React.Component {
-  render() {
-    return (
-      <div>
-        <h2>Home</h2>
-      </div>
-    );
-  }
-}
-
 
 // DOMのレンダリング処理
 //   see. https://reactjs.org/docs/react-dom.html#render

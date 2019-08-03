@@ -47,7 +47,7 @@ class BBS extends React.Component {
     return(
       <table>
         <tbody>
-          BBStest
+          只今、工事中です。
         </tbody>
       </table>
     );
