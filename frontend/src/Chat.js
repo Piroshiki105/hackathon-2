@@ -19,7 +19,7 @@ class Chat extends React.Component {
   }
 
   loadchatList() {
-    return fetch("http://localhost:3001/_api/chat")
+    return fetch(Const.BASE_URL + "/_api/chat")
       .then((response) => response.json())
       .then((responseJson) =>
         this.setState({

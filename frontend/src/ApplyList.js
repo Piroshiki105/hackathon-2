@@ -1,6 +1,7 @@
 var React = require('react');
 var rrd = require('react-router-dom');
 var Link = rrd.Link;
+var Const = require('./Const')
 
 // 一覧レンダリング用コンポーネント
 class ApplyList extends React.Component {
@@ -19,7 +20,7 @@ class ApplyList extends React.Component {
   }
 
   loadApplyList() {
-    return fetch("http://localhost:3001/_api/apply")
+    return fetch(Const.BASE_URL + "/_api/apply")
       .then((response) => response.json())
       .then((responseJson) =>
         this.setState({
