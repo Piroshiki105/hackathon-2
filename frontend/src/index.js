@@ -21,7 +21,7 @@ class ExpressSampleApp extends React.Component {
           <Route exact path="/" component={Home} />
           <Route exact path="/apply" component={ApplyList} />
           <Route exact path='/apply/:id([0-9]+)' component={ApplyDetail} />
-          <Route exact path="/apply/new" component={ApplyNew} />
+          <Route exact path="/apply_new" component={ApplyNew} />
           <Route exact path="/gallery" component={ImageList} />
           <Route exact path="/bbs" component={BBS} />        
           <Route exact path="/chat" component={Chat} />

@@ -33,10 +33,10 @@ class Home extends React.Component {
   //------------------------------------------------------------------------
 
   render() {
-    const body = this.state.home_list.map((home) =>
-      <tr key={`homeList-${home.id}`}>
-        <td>{home.name}</td>
-        <td>{home.text}</td>
+    const body = this.state.home_list.map((history) =>
+      <tr key={`homeList-${history.id}`}>
+        <td>{history.name}</td>
+        <td>{history.text}</td>
       </tr>
     );
 
