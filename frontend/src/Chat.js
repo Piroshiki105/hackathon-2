@@ -1,6 +1,7 @@
 var React = require('react');
 var rrd = require('react-router-dom');
 var Link = rrd.Link;
+var Const = require('./Const')
 
 // 一覧レンダリング用コンポーネント
 class Chat extends React.Component {
