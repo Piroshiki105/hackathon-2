@@ -1,4 +1,5 @@
 var React = require('react');
+var Const = require('./Const')
 
 class ApplyNew extends React.Component {
   constructor(props) {
@@ -25,7 +26,7 @@ class ApplyNew extends React.Component {
     const apply = this.state.apply || {};
     const id = (apply.id ? <div>ID: {apply.id}</div> : '');
     return (
-      <form action={'http://localhost:3001/_api/apply/new'} method='post'>
+      <form action={Const.BASE_URL + '/_api/apply/new'} method='post'>
         { /* cf. https://qiita.com/ozhaan/items/c1e394226c1d5acb7f0e */ }
         <input name="_method" type="hidden" value="put" readOnly />
         {id}

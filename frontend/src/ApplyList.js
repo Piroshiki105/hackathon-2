@@ -1,9 +1,12 @@
 var React = require('react');
 var rrd = require('react-router-dom');
 var Link = rrd.Link;
+var Const = require('./Const')
 
 // 一覧レンダリング用コンポーネント
 class ApplyList extends React.Component {
+
+  //applyを必要な情報に応じて書き換えていく--------------------------------------
   constructor(props) {
     super(props);
     this.state = {
@@ -12,8 +15,12 @@ class ApplyList extends React.Component {
     this.loadApplyList = this.loadApplyList.bind(this);
   }
 
+  componentWillMount() {
+    this.loadApplyList();
+  }
+
   loadApplyList() {
-    return fetch("http://localhost:3001/_api/apply")
+    return fetch(Const.BASE_URL + "/_api/apply")
       .then((response) => response.json())
       .then((responseJson) =>
         this.setState({
@@ -24,13 +31,10 @@ class ApplyList extends React.Component {
         console.error(error);
       });
   }
-
-  componentWillMount() {
-    this.loadApplyList();
-  }
+  //------------------------------------------------------------------------
 
   render() {
-    const apply_list = this.state.apply_list.map((apply) =>
+    const body = this.state.apply_list.map((apply) =>
       <tr key={`ApplyList-${apply.id}`}>
         <td>
           <Link to={`/apply/${apply.id}`}>{apply.id}</Link>
@@ -49,7 +53,7 @@ class ApplyList extends React.Component {
           </tr>
         </thead>
         <tbody>
-          {apply_list}
+          {body}
         </tbody>
       </table>
     );
