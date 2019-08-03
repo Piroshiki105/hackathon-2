@@ -36,18 +36,16 @@ class ImageList extends React.Component {
   render() {
     const body = this.state.image_list.map((image) =>
       <tr key={`imageList-${image.id}`}>
-        <td>
-          <Link to={`/image/${image.id}`}>{image.id}</Link>
-        </td>
-        <td>{image.user_name}</td>
-        <td>{image.value}</td>
+        <td>{image.name}</td>
+        <td><img src={image.url} /></td>
       </tr>
     );
 
-    return(
+    
+    return (
       <table>
         <tbody>
-          test
+          {body}
         </tbody>
       </table>
     );
@@ -55,17 +53,3 @@ class ImageList extends React.Component {
 }
 
 module.exports = ImageList;
-
-
-
-// <table>
-// <thead>
-//   <tr>
-//     <th>Name</th>
-//     <th>VALUE</th>
-//   </tr>
-// </thead>
-// <tbody>
-//   {body}
-// </tbody>
-// </table>

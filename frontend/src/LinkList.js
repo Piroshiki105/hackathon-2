@@ -35,19 +35,16 @@ class LinkList extends React.Component {
 
   render() {
     const body = this.state.link_list.map((link) =>
-      <tr key={`linkList-${link.id}`}>
-        <td>
-          <Link to={`/link/${link.id}`}>{link.id}</Link>
-        </td>
-        <td>{link.user_name}</td>
-        <td>{link.value}</td>
+      <tr key={`linkList-${link.id}`}>]
+        <td><Link to={link.url}>{link.name}</Link></td>
       </tr>
+
     );
 
-    return(
+    return (
       <table>
         <tbody>
-          linktest
+          {body}
         </tbody>
       </table>
     );
@@ -55,17 +52,3 @@ class LinkList extends React.Component {
 }
 
 module.exports = LinkList;
-
-
-
-// <table>
-// <thead>
-//   <tr>
-//     <th>Name</th>
-//     <th>VALUE</th>
-//   </tr>
-// </thead>
-// <tbody>
-//   {body}
-// </tbody>
-// </table>
