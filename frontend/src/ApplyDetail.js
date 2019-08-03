@@ -1,4 +1,5 @@
 var React = require('react');
+var Const = require('./Const')
 
 class ApplyDetail extends React.Component {
   constructor(props) {
@@ -12,7 +13,7 @@ class ApplyDetail extends React.Component {
   }
 
   loadApply() {
-    return fetch(`http://localhost:3001/_api/Apply/${this.state.id}`)
+    return fetch(`${Const.BASE_URL}/_api/Apply/${this.state.id}`)
       .then((response) => response.json())
       .then((responseJson) =>
         this.setState({
