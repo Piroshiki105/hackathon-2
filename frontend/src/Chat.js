@@ -47,7 +47,7 @@ class Chat extends React.Component {
     return(
       <table>
         <tbody>
-          chattest
+          只今、工事中です。
         </tbody>
       </table>
     );
