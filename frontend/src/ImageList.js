@@ -35,18 +35,15 @@ class ImageList extends React.Component {
   render() {
     const body = this.state.image_list.map((image) =>
       <tr key={`imageList-${image.id}`}>
-        <td>
-          <Link to={`/image/${image.id}`}>{image.id}</Link>
-        </td>
-        <td>{image.user_name}</td>
-        <td>{image.value}</td>
+        <td>{image.name}</td>
+        <td><Link to={`{image.url} `}><img src={image.url} /></Link></td>
       </tr>
     );
 
-    return(
+    return (
       <table>
         <tbody>
-          test
+          {body}
         </tbody>
       </table>
     );
