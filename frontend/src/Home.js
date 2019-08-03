@@ -63,17 +63,3 @@ class Home extends React.Component {
 }
 
 module.exports = Home;
-
-
-
-// <table>
-// <thead>
-//   <tr>
-//     <th>Name</th>
-//     <th>VALUE</th>
-//   </tr>
-// </thead>
-// <tbody>
-//   {body}
-// </tbody>
-// </table>

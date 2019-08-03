@@ -57,15 +57,3 @@ class BBS extends React.Component {
 module.exports = BBS;
 
 
-
-// <table>
-// <thead>
-//   <tr>
-//     <th>Name</th>
-//     <th>VALUE</th>
-//   </tr>
-// </thead>
-// <tbody>
-//   {body}
-// </tbody>
-// </table>

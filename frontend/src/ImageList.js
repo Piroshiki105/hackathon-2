@@ -53,17 +53,3 @@ class ImageList extends React.Component {
 }
 
 module.exports = ImageList;
-
-
-
-// <table>
-// <thead>
-//   <tr>
-//     <th>Name</th>
-//     <th>VALUE</th>
-//   </tr>
-// </thead>
-// <tbody>
-//   {body}
-// </tbody>
-// </table>

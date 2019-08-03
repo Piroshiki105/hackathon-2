@@ -52,17 +52,3 @@ class LinkList extends React.Component {
 }
 
 module.exports = LinkList;
-
-
-
-// <table>
-// <thead>
-//   <tr>
-//     <th>Name</th>
-//     <th>VALUE</th>
-//   </tr>
-// </thead>
-// <tbody>
-//   {body}
-// </tbody>
-// </table>
