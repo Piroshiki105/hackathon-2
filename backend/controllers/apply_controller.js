@@ -1,8 +1,7 @@
 'use strict';
 
-var pgp = require('pg-promise')(/* options */);
-var db = pgp('postgres://postgres:postgres@127.0.0.1:5432/hackathon2');
-const BASE_URL = 'http://localhost:3000'
+var connector = require('../conf/datasource');
+var db = connector.getConnection();
 
 exports.all = (req, res, next) => {
   db.any("select * from APPLY limit 100")
