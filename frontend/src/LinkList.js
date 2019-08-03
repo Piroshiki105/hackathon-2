@@ -35,8 +35,8 @@ class LinkList extends React.Component {
 
   render() {
     const body = this.state.link_list.map((link) =>
-      <tr key={`linkList-${link.id}`}>]
-        <td><Link to={link.url}>{link.name}</Link></td>
+      <tr key={`linkList-${link.id}`}>
+        <td><a href = {link.url}>{link.name}</a></td>
       </tr>
 
     );
