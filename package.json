@@ -13,16 +13,6 @@
     "build": "react-scripts build",
     "start": "node serve.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Piroshiki105/hackathon-2.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Piroshiki105/hackathon-2/issues"
-  },
-  "homepage": "https://github.com/Piroshiki105/hackathon-2#readme",
   "browserslist": {
     "production": [
       ">0.2%",
