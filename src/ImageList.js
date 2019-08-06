@@ -1,5 +1,4 @@
 var React = require('react');
-var rrd = require('react-router-dom');
 
 // 一覧レンダリング用コンポーネント
 export default class ImageList extends React.Component {
@@ -35,7 +34,7 @@ export default class ImageList extends React.Component {
     const body = this.state.image_list.map((image) =>
       <tr key={`imageList-${image.id}`}>
         <td>{image.name}</td>
-        <td><img src={image.url} /></td>
+        <td><img src={image.url} alt={image.name} /></td>
       </tr>
     );
 

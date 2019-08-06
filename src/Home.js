@@ -1,5 +1,4 @@
 var React = require('react');
-var rrd = require('react-router-dom');
 
 // 一覧レンダリング用コンポーネント
 export default class Home extends React.Component {

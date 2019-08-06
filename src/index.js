@@ -13,9 +13,8 @@ var ReactDOM = require('react-dom');
 var rrd = require('react-router-dom');
 var BrowserRouter = rrd.BrowserRouter;
 var Route = rrd.Route;
-// var Link = rrd.Link;
 
-class ExpressSampleApp extends React.Component {
+class App extends React.Component {
   render() {
     return (
       <BrowserRouter>
@@ -37,6 +36,6 @@ class ExpressSampleApp extends React.Component {
 // DOMのレンダリング処理
 //   see. https://reactjs.org/docs/react-dom.html#render
 ReactDOM.render(
-  <ExpressSampleApp />,            // Appをレンダリングする
+  <App />,            // Appをレンダリングする
   document.getElementById('root')  // id=root要素に対してレンダリングする
 );
