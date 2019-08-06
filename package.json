@@ -1,0 +1,38 @@
+{
+  "name": "hackathon-2",
+  "dependencies": {
+    "express": "^4.17.1",
+    "morgan": "^1.9.1",
+    "pg-promise": "^9.0.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "^3.0.1"
+  },
+  "scripts": {
+    "build": "react-scripts build",
+    "start": "node serve.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Piroshiki105/hackathon-2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Piroshiki105/hackathon-2/issues"
+  },
+  "homepage": "https://github.com/Piroshiki105/hackathon-2#readme",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

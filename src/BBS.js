@@ -1,30 +1,29 @@
 var React = require('react');
 var rrd = require('react-router-dom');
 var Link = rrd.Link;
-var Const = require('./Const')
 
 // 一覧レンダリング用コンポーネント
-class Chat extends React.Component {
+export default class BBS extends React.Component {
 
-  //chatを必要な情報に応じて書き換えていく--------------------------------------
+  //bbsを必要な情報に応じて書き換えていく--------------------------------------
   constructor(props) {
     super(props);
     this.state = {
-      chat_list: [],
+      bbs_list: [],
     };
-    this.loadchatList = this.loadchatList.bind(this);
+    this.loadbbsList = this.loadbbsList.bind(this);
   }
 
   componentWillMount() {
-    this.loadchatList();
+    this.loadbbsList();
   }
 
-  loadchatList() {
-    return fetch(Const.BASE_URL + "/_api/chat")
+  loadbbsList() {
+    return fetch("/_api/bbs")
       .then((response) => response.json())
       .then((responseJson) =>
         this.setState({
-          chat_list: responseJson.chat_list,
+          bbs_list: responseJson.bbs_list,
         })
       )
       .catch((error) => {
@@ -34,13 +33,13 @@ class Chat extends React.Component {
   //------------------------------------------------------------------------
 
   render() {
-    const body = this.state.chat_list.map((chat) =>
-      <tr key={`chatList-${chat.id}`}>
+    const body = this.state.bbs_list.map((bbs) =>
+      <tr key={`bbsList-${bbs.id}`}>
         <td>
-          <Link to={`/chat/${chat.id}`}>{chat.id}</Link>
+          <Link to={`/bbs/${bbs.id}`}>{bbs.id}</Link>
         </td>
-        <td>{chat.user_name}</td>
-        <td>{chat.value}</td>
+        <td>{bbs.user_name}</td>
+        <td>{bbs.value}</td>
       </tr>
     );
 
@@ -53,7 +52,3 @@ class Chat extends React.Component {
     );
   }
 }
-
-module.exports = Chat;
-
-

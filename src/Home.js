@@ -1,9 +1,8 @@
 var React = require('react');
 var rrd = require('react-router-dom');
-var Link = rrd.Link;
 
 // 一覧レンダリング用コンポーネント
-class Home extends React.Component {
+export default class Home extends React.Component {
 
   //homeを必要な情報に応じて書き換えていく--------------------------------------
   constructor(props) {
@@ -19,7 +18,7 @@ class Home extends React.Component {
   }
 
   loadhomeList() {
-    return fetch("http://localhost:3001/_api/home")
+    return fetch("/_api/home")
       .then((response) => response.json())
       .then((responseJson) =>
         this.setState({
@@ -64,5 +63,3 @@ class Home extends React.Component {
     );
   }
 }
-
-module.exports = Home;

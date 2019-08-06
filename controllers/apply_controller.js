@@ -27,7 +27,7 @@ exports.findById = (req, res, next) => {
 exports.save = (req, res, next) => {
   db.one("insert into APPLY(ID, USER_NAME, VALUE) values(nextval('SEQ_APPLY_ID'), $1, $2) returning ID", [req.body.user_name, req.body.value])
     .then((data) => {
-      res.redirect(302, BASE_URL + '/apply/' + data.id);
+      res.redirect(302, '/apply/' + data.id);
     })
     .catch((error) => {
       console.log('ERROR:', error);

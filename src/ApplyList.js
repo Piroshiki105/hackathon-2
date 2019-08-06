@@ -1,10 +1,9 @@
 var React = require('react');
 var rrd = require('react-router-dom');
 var Link = rrd.Link;
-var Const = require('./Const')
 
 // 一覧レンダリング用コンポーネント
-class ApplyList extends React.Component {
+export default class ApplyList extends React.Component {
 
   //applyを必要な情報に応じて書き換えていく--------------------------------------
   constructor(props) {
@@ -20,7 +19,7 @@ class ApplyList extends React.Component {
   }
 
   loadApplyList() {
-    return fetch(Const.BASE_URL + "/_api/apply")
+    return fetch("/_api/apply")
       .then((response) => response.json())
       .then((responseJson) =>
         this.setState({
@@ -59,5 +58,3 @@ class ApplyList extends React.Component {
     );
   }
 }
-
-module.exports = ApplyList;

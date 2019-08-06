@@ -1,10 +1,8 @@
 var React = require('react');
 var rrd = require('react-router-dom');
-var Link = rrd.Link;
-var Const = require('./Const')
 
 // 一覧レンダリング用コンポーネント
-class ImageList extends React.Component {
+export default class ImageList extends React.Component {
 
   //imageを必要な情報に応じて書き換えていく--------------------------------------
   constructor(props) {
@@ -20,7 +18,7 @@ class ImageList extends React.Component {
   }
 
   loadimageList() {
-    return fetch(Const.BASE_URL + "/_api/image")
+    return fetch("/_api/image")
       .then((response) => response.json())
       .then((responseJson) =>
         this.setState({
@@ -51,5 +49,3 @@ class ImageList extends React.Component {
     );
   }
 }
-
-module.exports = ImageList;

@@ -1,17 +1,19 @@
+import Home from './Home';
+import ApplyList from './ApplyList';
+import ApplyDetail from './ApplyDetail';
+import ApplyNew from './ApplyNew';
+import ImageList from './ImageList';
+import BBS from './BBS';
+import Chat from './Chat';
+import LinkList from './LinkList';
+
+
 var React = require('react');
 var ReactDOM = require('react-dom');
 var rrd = require('react-router-dom');
 var BrowserRouter = rrd.BrowserRouter;
 var Route = rrd.Route;
 // var Link = rrd.Link;
-var ApplyList = require('./ApplyList');
-var ApplyDetail = require('./ApplyDetail');
-var ApplyNew = require('./ApplyNew');
-var ImageList = require('./ImageList');
-var BBS = require('./BBS');
-var Chat = require('./Chat');
-var LinkList = require('./LinkList');
-var Home = require('./Home');
 
 class ExpressSampleApp extends React.Component {
   render() {

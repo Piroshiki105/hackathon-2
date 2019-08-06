@@ -25,35 +25,35 @@ insert into CONTENT(ID, NAME, TITLE, VALUE) values (nextval('SEQ_CONTENT_ID'), '
 insert into APPLY(ID, USER_NAME, VALUE) values (nextval('SEQ_CONTENT_ID'), 'USER_XX', 'HOGEHOGE');
 insert into CHAT(ID, USER_NAME, VALUE) values (nextval('SEQ_CONTENT_ID'), 'USER_XX', 'HOGEHOGE');
 
-CREATE TABLE "LINK"
+CREATE TABLE LINK
 (
   id numeric(4,0) NOT NULL,
   name text NOT NULL,
   url text NOT NULL
 )
 ;
-CREATE TABLE "BBS"
+CREATE TABLE BBS
 (
   id numeric(4,0) NOT NULL,
   name text NOT NULL,
   url text NOT NULL
 )
 ;
-CREATE TABLE "IMAGE"
+CREATE TABLE IMAGE
 (
   id numeric(4,0) NOT NULL,
   name text NOT NULL,
   url text NOT NULL
 )
 ;
-CREATE TABLE "HISTORY"
+CREATE TABLE HISTORY
 (
   id numeric(4,0) NOT NULL,
   name text NOT NULL,
   url text NOT NULL
 )
 ;
-CREATE TABLE "CHAT"
+CREATE TABLE CHAT
 (
   id numeric(4,0) NOT NULL,
   name text NOT NULL,

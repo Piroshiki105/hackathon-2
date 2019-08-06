@@ -1,7 +1,6 @@
 var React = require('react');
-var Const = require('./Const')
 
-class ApplyDetail extends React.Component {
+export default class ApplyDetail extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -13,7 +12,7 @@ class ApplyDetail extends React.Component {
   }
 
   loadApply() {
-    return fetch(`${Const.BASE_URL}/_api/Apply/${this.state.id}`)
+    return fetch(`/_api/Apply/${this.state.id}`)
       .then((response) => response.json())
       .then((responseJson) =>
         this.setState({
@@ -48,5 +47,3 @@ class ApplyDetail extends React.Component {
     );
   }
 }
-
-module.exports = ApplyDetail;

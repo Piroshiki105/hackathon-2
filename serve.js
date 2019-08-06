@@ -4,12 +4,13 @@ var debug = require('debug')('hackathon-2:server');
 var http = require('http');
 var express = require('express');
 var logger = require('morgan');
-var bodyParser = require('body-parser')
+var bodyParser = require('body-parser');
+var path = require('path');
 
 /**
  * Get port from environment and store in Express.
  */
-var port = normalizePort(process.env.PORT || '3001');
+var port = normalizePort(process.env.PORT || '3000');
 
 var app = express();
 app.use(bodyParser.json());
@@ -23,6 +24,11 @@ app.use((req, res, next) => {
 
 var api = require("./routes/api"); // ルーティング設定
 app.use('/_api/', api);
+
+app.use(express.static(path.join(__dirname, 'build')));
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 
 app.set('port', port);
 
