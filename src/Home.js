@@ -60,7 +60,7 @@ export default class Home extends React.Component {
 
     return (
       <table width="100%">
-        <tr align="center" >
+        <tr align="center">
           <br/>
           <div><font face="HGP創英角ﾎﾟｯﾌﾟ体" size="6"><font color="#ff4d00">エ</font><font color="#f98100">ビ</font><font color="#f4b400">ス</font><font color="#eee300">マ</font><font color="#c1e900">ー</font><font color="#8ae300">ト</font><font color="#57de00">公</font><font color="#25d800">式</font><font color="#00d30a">サ</font><font color="#00cd36">イ</font><font color="#00c860">ト</font><font color="#00c288">！</font></font></div>
           <br/>
@@ -71,13 +71,14 @@ export default class Home extends React.Component {
         <tr align="center">
           <td>
           {count}人目のお客様です。
-        </td>
+         </td>
         </tr>
-        <tbody align="center">
-          <br/>
-          更新履歴
-          {body}
-        </tbody>
+        <tr align="center"><td>更新履歴</td></tr>
+        <tr align="center">
+          <table>
+            {body}
+          </table>
+        </tr>
       </table>
     );
   }
