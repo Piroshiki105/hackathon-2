@@ -7,7 +7,8 @@ export default class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      home_list: [],
+      history_list: [],
+      count: 0
     };
     this.loadhomeList = this.loadhomeList.bind(this);
   }
@@ -16,27 +17,46 @@ export default class Home extends React.Component {
     this.loadhomeList();
   }
 
-  loadhomeList() {
-    return fetch("/_api/home")
-      .then((response) => response.json())
-      .then((responseJson) =>
-        this.setState({
-          home_list: responseJson.home_list,
-        })
-      )
-      .catch((error) => {
-        console.error(error);
+  async loadhomeList() {
+    let tasks = [];
+    tasks.push(fetch("/_api/history")
+    .then((response) => response.json())
+    .then((responseJson) => {
+      this.setState({
+        history_list: responseJson.history_list
       });
+    })
+    .catch((error) => {
+      console.error(error);
+    }));
+
+    tasks.push(fetch("/_api/counter")
+    .then((response) => response.json())
+    .then((responseJson) => {
+      if(!responseJson.count) {
+        return;
+      }
+      this.setState({
+        count: responseJson.count
+      });
+    })
+    .catch((error) => {
+      console.error(error);
+    }));
+
+    await Promise.all(tasks);
   }
   //------------------------------------------------------------------------
 
   render() {
-    const body = this.state.home_list.map((history) =>
+    const body = this.state.history_list.map((history) =>
       <tr key={`homeList-${history.id}`}>
         <td>{history.name}</td>
         <td>{history.text}</td>
       </tr>
     );
+
+    const count = <span>{('000000000' + this.state.count).slice(-9)}</span>
 
     return (
       <table width="100%">
@@ -50,7 +70,7 @@ export default class Home extends React.Component {
         </td>
         <tr align="center">
           <td>
-            人目のお客様です。
+          {count}人目のお客様です。
         </td>
         </tr>
         <tbody align="center">

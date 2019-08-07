@@ -5,6 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program",
+            "program": "${workspaceFolder}/serve.js",
+            "outputCapture": "std"
+        },
+        {
             "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome",
@@ -17,14 +24,6 @@
             "name": "Attach to Chrome",
             "port": 9222,
             "webRoot": "${workspaceFolder}"
-        },        
-        {
-            "type": "node",
-            "request": "launch",
-            "name": "frontend",
-            "program": "npm start",
-            "cwd": "${workspaceFolder}\\frontend",
-            "outputCapture": "std"
-        },
+        }
     ]
 }
